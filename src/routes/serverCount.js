@@ -8,12 +8,13 @@ const mongoose = require("mongoose");
 const Guild = mongoose.model("Guild").schema;
 const router = express.Router();
 let servers;
-Guild.where({}).count((err,count)=>{
-    if(err) {console.error(err)}
-    else{
+Guild.where({}).count((err, count) => {
+    if (err) {
+        console.error(err);
+    } else {
         servers = count;
     }
-})
+});
 router.get("/", (req, res) => {
     console.log(servers);
     res.status(200).send("This API is coming soon");

@@ -4,6 +4,22 @@
  */
 require("dotenv").config();
 const express = require("express");
+const mongoose = require("mongoose");
+
+// eslint-disable-next-line no-undef
+mongoose
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+    })
+    .then(() => {
+        console.log("Connected to MongoDB!");
+    })
+    .catch((err) => {
+        console.error("Error connecting to MongoDB: ", err);
+    });
 
 require("./controllers/apiLimiter");
 

@@ -1,0 +1,33 @@
+{
+  "name": "@welcomebot/api",
+  "version": "1.0.0-dev",
+  "description": "API for Welcome-Bot",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "format:check": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Welcome-Bot/stats-api.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Welcome-Bot Team",
+  "license": "LGPL-2.1-only",
+  "bugs": {
+    "url": "https://github.com/Welcome-bot/stats-api/issues"
+  },
+  "homepage": "https://github.com/Welcome-bot/stats-api#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.3.0",
+    "nocache": "^3.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}

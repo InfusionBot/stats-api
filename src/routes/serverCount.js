@@ -5,5 +5,6 @@
 const express = require('express');
 const router = express.Router();
 router.get('/', (req, res) => {
-  res.send("This API is coming soon").status(200);
+  res.status(200).send("This API is coming soon");
+  res.end();
 });

@@ -5,7 +5,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-const Guild = mongoose.model("Guild").schema;
+const Stats = mongoose.model("Stats").schema;
 const router = express.Router();
 let servers;
 Guild.where({}).count((err, count) => {

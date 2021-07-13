@@ -13,3 +13,4 @@ router.get("/", (req, res) => {
     res.status(200).send("This API is coming soon");
     res.end();
 });
+module.exports = router;

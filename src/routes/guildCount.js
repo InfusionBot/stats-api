@@ -12,4 +12,19 @@ router.get("/", async (req, res) => {
     res.send(stats.guildCount.toString());
     res.end();
 });
+router.post("/:botId", (req, res) => {
+    let botId;
+    if (req.params.botId.indexOf("beta") !== -1) {
+        botId = "Welcome-Bot (beta)";
+    } else {
+        botId = "Welcome-Bot";
+    }
+    if (req.headers.authorization === process.env.authorization) {
+        await require("../utils/updateStats")(botId, "guildCount", req.body);
+        res.sendStatus(200);
+    } else {
+        res.sendStatus(401);
+    }
+    res.end();
+});
 module.exports = router;

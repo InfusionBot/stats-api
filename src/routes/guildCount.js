@@ -8,9 +8,8 @@ const mongoose = require("mongoose");
 const Stats = mongoose.model("Stats").schema;
 const router = express.Router();
 router.get("/", async (req, res) => {
-    const servers = await require("../utils/getStats")("Welcome-Bot")
-        .guildCount;
-    res.status(200).send(servers);
+    const stats = await require("../utils/getStats")("Welcome-Bot");
+    res.status(200).send(stats.guildCount);
     res.end();
 });
 module.exports = router;

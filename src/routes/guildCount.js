@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 const Stats = mongoose.model("Stats").schema;
 const router = express.Router();
 router.get("/", (req, res) => {
-    const servers = await require("../utils/getStats")("Welcome-Bot").guildCount;
+    const servers = await require("../utils/getStats")("Welcome-Bot")
+        .guildCount;
     res.status(200).send(servers);
     res.end();
 });

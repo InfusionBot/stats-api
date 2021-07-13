@@ -5,9 +5,7 @@
 require("dotenv").config();
 
 process.on("unhandledRejection", (error) => {
-    if (
-        error.toString().indexOf("No bot with bot name Welcome-Bot") !== -1
-    ) {
+    if (error.toString().indexOf("No bot with bot name Welcome-Bot") !== -1) {
         require("./utils/addStats")("Welcome-Bot");
     } else {
         console.error("Unhandled promise rejection:", error);

@@ -3,6 +3,17 @@
  * Licensed under Lesser General Public License v2.1 (LGPl-2.1 - https://opensource.org/licenses/lgpl-2.1.php)
  */
 require("dotenv").config();
+
+process.on("unhandledRejection", (error) => {
+    if (
+        error.toString().indexOf("No bot with bot name Welcome-Bot") !== -1
+    ) {
+        require("./utils/addStats")("Welcome-Bot");
+    } else {
+        console.error("Unhandled promise rejection:", error);
+    }
+});
+
 const express = require("express");
 const mongoose = require("mongoose");
 

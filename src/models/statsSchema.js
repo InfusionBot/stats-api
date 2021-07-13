@@ -5,6 +5,12 @@
 const mongoose = require("mongoose");
 
 const stats = new mongoose.Schema({
+    bot: {
+        type: String,
+        required: true,
+        trim: true,
+        default: "Welcome-Bot",
+    },
     guildCount: {
         type: Number,
         required: true,

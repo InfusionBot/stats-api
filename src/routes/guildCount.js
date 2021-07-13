@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 router.post("/:botId", async (req, res) => {
     let botId;
-    if (req.params.botId.indexOf("beta") !== -1) {
+    if (req.param("botId").indexOf("beta") !== -1) {
         botId = "Welcome-Bot (beta)";
     } else {
         botId = "Welcome-Bot";

@@ -10,6 +10,7 @@ module.exports = (botName, property, value) => {
             { [property]: value },
             (err) => {
                 if (err) {
+                    console.log(err);
                     return reject("Could not update stats");
                 } else {
                     return resolve("Stats Updated");

@@ -9,7 +9,7 @@ const Stats = mongoose.model("Stats").schema;
 const router = express.Router();
 router.get("/", async (req, res) => {
     const stats = await require("../utils/getStats")("Welcome-Bot");
-    res.status(200).send(stats.guildCount);
+    res.sendStatus(200).send(stats.guildCount.toString());
     res.end();
 });
 module.exports = router;

@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     res.send(stats.guildCount.toString());
     res.end();
 });
-router.post("/:botId", (req, res) => {
+router.post("/:botId", async (req, res) => {
     let botId;
     if (req.params.botId.indexOf("beta") !== -1) {
         botId = "Welcome-Bot (beta)";

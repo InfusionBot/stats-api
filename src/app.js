@@ -29,9 +29,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-app.use("/serverCount", require("nocache")());
+app.use("/guildCount", require("nocache")());
 
-app.use("/serverCount", require("./routes/serverCount"));
+app.use("/guildCount", require("./routes/guildCount"));
 
 app.use(function (req, res, next) {
     console.log("Wrong ping 404");

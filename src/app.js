@@ -22,6 +22,7 @@ mongoose
     });
 
 require("./controllers/apiLimiter");
+require("./models/statsSchema");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));

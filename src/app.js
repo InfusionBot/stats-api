@@ -38,7 +38,7 @@ require("./models/statsSchema");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json());
+app.use(express.bodyParser.text());
 
 app.use("/guildCount", require("nocache")());
 

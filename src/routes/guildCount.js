@@ -7,14 +7,7 @@ const mongoose = require("mongoose");
 
 const Stats = mongoose.model("Stats").schema;
 const router = express.Router();
-let servers;
-Guild.where({}).count((err, count) => {
-    if (err) {
-        console.error(err);
-    } else {
-        servers = count;
-    }
-});
+const servers = require("../utils/getStats")("Welcome-Bot").guildCount;
 router.get("/", (req, res) => {
     console.log(servers);
     res.status(200).send("This API is coming soon");

@@ -1,6 +1,6 @@
 {
-  "name": "@welcomebot/api",
-  "version": "1.0.0-dev",
+  "name": "@welcomebot/stats-api",
+  "version": "0.1.0-dev",
   "description": "API for Welcome-Bot",
   "main": "src/app.js",
   "scripts": {

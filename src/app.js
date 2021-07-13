@@ -16,6 +16,7 @@ process.on("unhandledRejection", (error) => {
 
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 // eslint-disable-next-line no-undef
 mongoose
@@ -38,7 +39,7 @@ require("./models/statsSchema");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.bodyParser.text());
+app.use(bodyParser.text());
 
 app.use("/guildCount", require("nocache")());
 
